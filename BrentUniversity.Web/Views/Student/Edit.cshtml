@@ -6,7 +6,6 @@
 
 <h2>Edit</h2>
 
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -33,14 +32,16 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group bootstrap-datetimepicker-widget">
             @Html.LabelFor(model => model.EnrollmentDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.EnrollmentDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.EnrollmentDate, new { @class = "form-control", placeholder = "Enter Enrollment date here..." })
+                <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                </span>
                 @Html.ValidationMessageFor(model => model.EnrollmentDate, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />
@@ -55,4 +56,22 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+<script type="text/javascript">
+    $(function () {
+        $('.bootstrap-datetimepicker-widget').datetimepicker({
+            language: 'en',
+            pick12HourFormat: true
+        });
+    });
+
+    //$('.datetimepicker').datetimepicker({
+    //    pickDate: true,                 //en/disables the date picker
+    //    pickTime: true,                 //en/disables the time picker
+    //    useMinutes: false,              //en/disables the minutes picker
+    //    useSeconds: false,              //en/disables the seconds picker
+    //    startDate: moment().subtract('days', 1)// a minimum date
+    //});
+</script>
+
 }

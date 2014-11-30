@@ -33,7 +33,7 @@ namespace BrentUniversity.Data
 
         [Display(Name = "Enroll Date")]
         [DataType(DataType.DateTime)]
-        [Required(ErrorMessage = "Enrollment Date is required.")]
+        [Required(ErrorMessage = "Enrollment Date & Time is required.")]
         public DateTime EnrollmentDate { get; set; }
     
         public virtual ICollection<Enrollment> Enrollments { get; set; }
