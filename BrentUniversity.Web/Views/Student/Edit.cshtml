@@ -37,7 +37,7 @@
             <div class="col-md-10">
                 @Html.TextBoxFor(model => model.EnrollmentDate, new { @class = "form-control", placeholder = "Enter Enrollment date here..." })
                 <span class="add-on">
-                    <i data-date-icon="icon-calendar" data-time-icon="icon-time" class="glyphicon-calendar"></i>
+                    <i data-date-icon="icon-calendar" data-time-icon="icon-time" class="glyphicon glyphicon-calendar"></i>
                 </span>
                 @Html.ValidationMessageFor(model => model.EnrollmentDate, "", new { @class = "text-danger" })
             </div>
